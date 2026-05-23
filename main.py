@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import smtplib
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
@@ -10,6 +11,14 @@ import os
 load_dotenv()
 
 app = FastAPI()
+
+# CORS middleware (needed for Vercel)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Mount static directory for CSS, JS, and Images
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -22,14 +31,12 @@ from data.portfolio_data import portfolio
 
 @app.get("/")
 async def home(request: Request):
-    # Pass the portfolio data to the template using keyword arguments
-    # The dictionary key here MUST match what the HTML is expecting (portfolio)
     return templates.TemplateResponse(
         request=request,
-        name="index.html", 
+        name="index.html",
         context={
             "request": request,
-            "portfolio": portfolio 
+            "portfolio": portfolio
         }
     )
 
@@ -63,3 +70,7 @@ async def contact(
     except Exception as e:
         print(f"Email error: {e}")
         return JSONResponse({"status": "error", "detail": str(e)})
+
+# Required for Vercel — exposes the app as a module-level variable
+# Vercel looks for 'app' at module level
+app = app
