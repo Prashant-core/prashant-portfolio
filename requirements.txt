@@ -1,6 +1,5 @@
 fastapi
 uvicorn
 jinja2
-aiofiles
-python-dotenv
 python-multipart
+python-dotenv
