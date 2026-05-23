@@ -1,0 +1,44 @@
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section-tag">who i am</div>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-img-wrap">
+          <div class="about-img-box">
+            <img src="/static/images/profile.jpg" alt="Prashant Kumar" class="profile-photo"/>
+          </div>
+          <div class="about-img-deco"></div>
+        </div>
+      </div>
+      <div class="about-right">
+        <h2 class="section-title">Turning Data Into <span class="gradient-text">Intelligence</span></h2>
+        <p class="about-text">{{ portfolio.about }}</p>
+
+        <!-- Stats (#6) -->
+        <div class="about-stats" id="about-stats">
+          <div class="stat-item">
+            <div class="stat-num" data-count="2">0<span>+</span></div>
+            <div class="stat-label">Live Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-count="92">0<span>%</span></div>
+            <div class="stat-label">Model Accuracy</div>
+          </div>
+        </div>
+
+        <div class="about-tags">
+          <span class="about-tag">📍 Noida, India</span>
+          <span class="about-tag">🎓 B.Tech CSE (AIML)</span>
+          <span class="about-tag">🏛️ Noida International University</span>
+          <span class="about-tag">✅ Available for hire</span>
+        </div>
+        <div class="about-links">
+          <a href="{{ portfolio.github }}" target="_blank" class="link-pill">GitHub</a>
+          <a href="{{ portfolio.linkedin }}" target="_blank" class="link-pill">LinkedIn</a>
+          <a href="mailto:{{ portfolio.email }}" class="link-pill">Email</a>
+          <a href="/static/resume.pdf" target="_blank" class="link-pill link-pill-resume">Download Resume ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

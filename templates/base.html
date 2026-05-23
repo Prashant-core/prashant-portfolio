@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prashant Kumar | AI Engineer · NETworq · Deepfake Detection</title>
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+
+  <!-- OG Meta Tags (#8) -->
+  <meta name="description" content="Prashant Kumar — AI & ML Engineer. Building AI that actually works in the real world." />
+  <meta property="og:title" content="Prashant Kumar — AI & ML Engineer" />
+  <meta property="og:description" content="Final year B.Tech student building real-world AI. Check out NETworq and Deepfake Detection." />
+  <meta property="og:image" content="/static/images/profile.jpg" />
+  <meta property="og:url" content="https://prashant-portfolio.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prashant Kumar — AI & ML Engineer" />
+  <meta name="twitter:description" content="Building AI that solves real problems. NETworq, Deepfake Detection & more." />
+  <meta name="twitter:image" content="/static/images/profile.jpg" />
+
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <!-- Profile pic instead of PK logo -->
+      <a href="#" class="nav-logo">
+        <img src="/static/images/profile.jpg" alt="Prashant Kumar" class="nav-profile-pic" />
+        <span class="nav-name">Prashant<span class="dot">.</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <!-- Hamburger (#4) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        <li><a href="#contact" class="mobile-cta" onclick="closeMobileMenu()">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- BACK TO TOP (#7) -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="footer-year"></span> {{ portfolio.name }}</span>
+      <div class="footer-links">
+        <a href="{{ portfolio.github }}" target="_blank">GitHub</a>
+        <a href="{{ portfolio.linkedin }}" target="_blank">LinkedIn</a>
+        <a href="mailto:{{ portfolio.email }}">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/animation.js"></script>
+</body>
+</html>
