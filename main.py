@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -6,7 +8,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import smtplib
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -20,11 +21,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount static directory for CSS, JS, and Images
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# --- VERCEL FIX: Get absolute path to the root folder ---
+BASE_DIR = Path(__file__).resolve().parent
 
-# Setup Jinja2 templates directory
-templates = Jinja2Templates(directory="templates")
+# Mount static directory using absolute path
+app.mount("/static", StaticFiles(directory=str(Path(BASE_DIR, 'static'))), name="static")
+
+# Setup Jinja2 templates directory using absolute path
+templates = Jinja2Templates(directory=str(Path(BASE_DIR, 'templates')))
+# --------------------------------------------------------
 
 # Import your data
 from data.portfolio_data import portfolio
