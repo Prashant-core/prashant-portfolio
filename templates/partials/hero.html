@@ -1,60 +1,72 @@
 <section class="hero" id="home">
 
-  <!-- Galaxy Video Background -->
   <div class="hero-video-wrap">
-    <video id="hero-video" class="hero-video" autoplay muted loop playsinline></video>
+    <video id="hero-video-dark" class="hero-video" autoplay muted loop playsinline></video>
+    
+    <video id="hero-video-light" class="hero-video" autoplay muted loop playsinline></video>
+    
     <div class="hero-video-overlay"></div>
   </div>
 
-  <!-- Subtle particles on top -->
   <canvas id="hero-canvas"></canvas>
 
-  <div class="hero-content">
-    <div class="hero-badge">
+  <div class="hero-content hero-humanized">
+    
+    <img src="/static/images/profile.jpg" alt="Prashant Kumar" class="hero-profile-img" />
+
+    <div class="hero-badge glass-badge">
       <span class="badge-dot"></span>
-      Open to AI & ML Opportunities
+      Looking for full-time roles
     </div>
 
     <h1 class="hero-title">
-      Hi, I'm<br/>
-      <span class="gradient-text hero-name">Prashant Kumar</span>
+      Hey, I'm <span class="hero-name">Prashant.</span>
     </h1>
 
     <h2 class="hero-sub">
-      <span id="typing-text"></span><span class="typing-cursor">|</span>
+      I'm an <span id="typing-text"></span><span class="typing-cursor">|</span>
     </h2>
 
     <p class="hero-desc">
-      Final year B.Tech (AI & ML) · Noida International University<br/>
-      Building AI that actually works — not just in notebooks.
+      I love using AI to find solutions for real-world problems. From identifying networking trends in NETworq to tackling disinformation with my Deepfake Detection system, I focus on building things that matter.
     </p>
 
     <div class="hero-btns">
-      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#projects" class="btn-primary">See my work</a>
       <a href="/static/resume.pdf" target="_blank" class="btn-secondary">View Resume ↗</a>
-      <a href="#contact" class="btn-outline">Let's Talk</a>
     </div>
+  </div>
 
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>scroll</span>
-    </div>
+  <div class="hero-scroll hero-scroll-left">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     (function() {
-      const video = document.getElementById('hero-video');
-      const src = 'https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8';
+      // --- LOAD DARK THEME VIDEO (Galaxy) ---
+      const videoDark = document.getElementById('hero-video-dark');
+      const srcDark = 'https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8';
+      
       if (Hls.isSupported()) {
-        const hls = new Hls({ autoStartLoad: true, startLevel: -1 });
-        hls.loadSource(src);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function() { video.play().catch(() => {}); });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = src;
-        video.play().catch(() => {});
+        const hlsDark = new Hls({ autoStartLoad: true, startLevel: -1 });
+        hlsDark.loadSource(srcDark);
+        hlsDark.attachMedia(videoDark);
+        hlsDark.on(Hls.Events.MANIFEST_PARSED, function() { videoDark.play().catch(() => {}); });
+      } else if (videoDark.canPlayType('application/vnd.apple.mpegurl')) {
+        videoDark.src = srcDark;
+        videoDark.play().catch(() => {});
       }
+
+      // --- LOAD LIGHT THEME VIDEO (Cubes) ---
+      const videoLight = document.getElementById('hero-video-light');
+      
+      // Your new light theme video URL
+      const srcLight = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4'; 
+      
+      videoLight.src = srcLight;
+      videoLight.play().catch(() => {});
     })();
   </script>
 

@@ -109,9 +109,8 @@ if (statsSection) {
 }
 
 // ── DARK / LIGHT MODE TOGGLE ──
-const themeToggle = document.getElementById('themeToggle');
-const themeLabel  = document.getElementById('themeLabel');
-const themeIcon   = document.getElementById('themeIcon');
+const themeToggleFloating = document.getElementById('themeToggleFloating');
+const themeIconFloating   = document.getElementById('themeIconFloating');
 const themeCircle = document.getElementById('themeCircle');
 let isLight = false;
 
@@ -135,13 +134,12 @@ function triggerThemeCircle(x, y, toLight) {
   }, 680);
 }
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', (e) => {
-    const rect = themeToggle.getBoundingClientRect();
+if (themeToggleFloating) {
+  themeToggleFloating.addEventListener('click', (e) => {
+    const rect = themeToggleFloating.getBoundingClientRect();
     isLight = !isLight;
     triggerThemeCircle(rect.left + rect.width / 2, rect.top + rect.height / 2, isLight);
-    if (themeIcon)  themeIcon.textContent  = isLight ? '☀️' : '🌙';
-    if (themeLabel) themeLabel.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+    if (themeIconFloating) themeIconFloating.textContent = isLight ? '☀️' : '🌙';
   });
 }
 
