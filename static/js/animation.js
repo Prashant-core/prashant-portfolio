@@ -112,7 +112,6 @@ if (statsSection) {
 function updateAge() {
   const el = document.getElementById('age-counter');
   if (!el) return;
-  // UPDATE THIS TO YOUR ACTUAL BIRTHDATE
   const dob = new Date('2004-01-13T00:00:00');
   el.textContent = ((new Date() - dob) / (1000 * 60 * 60 * 24 * 365.25)).toFixed(6);
 }
@@ -232,9 +231,6 @@ async function fetchGitHubStats() {
         }).join('');
         langsEl.innerHTML = `<div class="gh-lang-bar">${barHtml}</div><div class="gh-lang-labels">${labelsHtml}</div>`;
       }
-
-      // Draw contribution graph on canvas
-      drawContribGraph(repos);
     }
 
     if (loadingEl) loadingEl.style.display = 'none';
@@ -243,104 +239,6 @@ async function fetchGitHubStats() {
     if (loadingEl) loadingEl.innerHTML = '<span style="color:#888;font-size:13px">Visit <a href="https://github.com/Prashant-core" target="_blank" style="color:#7c3aed">github.com/Prashant-core</a></span>';
     console.error('GitHub error:', err);
   }
-}
-
-function drawContribGraph(repos) {
-  const canvas = document.getElementById('gh-contrib-canvas');
-  const loadingEl = document.getElementById('gh-contrib-loading');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  canvas.width = canvas.offsetWidth || 800;
-  canvas.height = 120;
-
-  // Generate last 30 days placeholder data based on repos update dates
-  const days = 30;
-  const data = new Array(days).fill(0);
-  const now = new Date();
-  repos.forEach(r => {
-    if (r.updated_at) {
-      const diff = Math.floor((now - new Date(r.updated_at)) / (1000*60*60*24));
-      if (diff < days) data[days - 1 - diff]++;
-    }
-  });
-
-  const W = canvas.width, H = canvas.height;
-  const maxVal = Math.max(...data, 1);
-  const padL = 36, padR = 16, padT = 10, padB = 28;
-  const chartW = W - padL - padR;
-  const chartH = H - padT - padB;
-  const stepX  = chartW / (days - 1);
-
-  ctx.clearRect(0, 0, W, H);
-
-  // Grid lines
-  ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-  ctx.lineWidth = 1;
-  for (let i = 0; i <= 4; i++) {
-    const y = padT + (chartH / 4) * i;
-    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
-  }
-
-  // Y axis labels
-  ctx.fillStyle = 'rgba(255,255,255,0.3)';
-  ctx.font = '10px Inter, sans-serif';
-  ctx.textAlign = 'right';
-  for (let i = 0; i <= 4; i++) {
-    const val = Math.round(maxVal * (1 - i/4));
-    const y = padT + (chartH / 4) * i;
-    ctx.fillText(val, padL - 6, y + 4);
-  }
-
-  // Gradient fill
-  const grad = ctx.createLinearGradient(0, padT, 0, padT + chartH);
-  grad.addColorStop(0, 'rgba(124,58,237,0.35)');
-  grad.addColorStop(1, 'rgba(124,58,237,0.02)');
-
-  ctx.beginPath();
-  data.forEach((val, i) => {
-    const x = padL + i * stepX;
-    const y = padT + chartH - (val / maxVal) * chartH;
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  });
-  ctx.lineTo(padL + (days-1)*stepX, padT + chartH);
-  ctx.lineTo(padL, padT + chartH);
-  ctx.closePath();
-  ctx.fillStyle = grad;
-  ctx.fill();
-
-  // Line
-  ctx.beginPath();
-  ctx.strokeStyle = '#7c3aed';
-  ctx.lineWidth = 2;
-  data.forEach((val, i) => {
-    const x = padL + i * stepX;
-    const y = padT + chartH - (val / maxVal) * chartH;
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-
-  // Dots
-  data.forEach((val, i) => {
-    const x = padL + i * stepX;
-    const y = padT + chartH - (val / maxVal) * chartH;
-    ctx.beginPath();
-    ctx.arc(x, y, 3, 0, Math.PI * 2);
-    ctx.fillStyle = val > 0 ? '#ec4899' : 'rgba(124,58,237,0.3)';
-    ctx.fill();
-  });
-
-  // X axis day labels
-  ctx.fillStyle = 'rgba(255,255,255,0.3)';
-  ctx.font = '9px Inter, sans-serif';
-  ctx.textAlign = 'center';
-  [0, 7, 14, 21, 29].forEach(i => {
-    const x = padL + i * stepX;
-    const d = new Date(now); d.setDate(d.getDate() - (days - 1 - i));
-    ctx.fillText(d.getDate(), x, H - 6);
-  });
-
-  if (loadingEl) loadingEl.style.display = 'none';
-  canvas.style.display = 'block';
 }
 
 // Fetch when GitHub section visible

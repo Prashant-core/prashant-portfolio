@@ -1114,3 +1114,36 @@ body.light-mode .leaflet-tile { filter: none; }
   .gh-contrib-card { grid-column: 1; }
   .gh-stats-row { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── GITHUB HEATMAP GRID ── */
+.gh-heatmap-link {
+  display: block;
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 14px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.gh-heatmap-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124,58,237,0.5);
+  box-shadow: 0 4px 20px rgba(124,58,237,0.1);
+}
+
+.gh-heatmap-img {
+  width: 100%;
+  display: block;
+  /* THE DARK MODE MAGIC FILTER */
+  filter: invert(1) hue-rotate(180deg) brightness(1.1);
+}
+
+/* Revert the magic filter if the user toggles your Light Mode switch */
+body.light-mode .gh-heatmap-img {
+  filter: none;
+}
+
+/* Hide the old canvas loading text since the image loads natively */
+.gh-contrib-loading { display: none; }
