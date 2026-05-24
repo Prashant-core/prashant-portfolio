@@ -108,16 +108,6 @@ if (statsSection) {
   }, { threshold: 0.5 }).observe(statsSection);
 }
 
-// ── LIVE AGE COUNTER ──
-function updateAge() {
-  const el = document.getElementById('age-counter');
-  if (!el) return;
-  const dob = new Date('2004-01-13T00:00:00');
-  el.textContent = ((new Date() - dob) / (1000 * 60 * 60 * 24 * 365.25)).toFixed(6);
-}
-updateAge();
-setInterval(updateAge, 100);
-
 // ── DARK / LIGHT MODE TOGGLE ──
 const themeToggle = document.getElementById('themeToggle');
 const themeLabel  = document.getElementById('themeLabel');

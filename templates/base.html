@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prashant Kumar | AI Engineer · NETworq · Deepfake Detection</title>
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='60' font-family='sans-serif' font-weight='bold' fill='%23ffffff'>P</text></svg>" />
 
-  <!-- OG Meta Tags (#8) -->
   <meta name="description" content="Prashant Kumar — AI & ML Engineer. Building AI that actually works in the real world." />
   <meta property="og:title" content="Prashant Kumar — AI & ML Engineer" />
   <meta property="og:description" content="Final year B.Tech student building real-world AI. Check out NETworq and Deepfake Detection." />
@@ -26,14 +25,11 @@
 </head>
 <body>
 
-  <!-- SCROLL PROGRESS BAR -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
 
-      <!-- Profile pic instead of PK logo -->
       <a href="#" class="nav-logo">
         <img src="/static/images/profile.jpg" alt="Prashant Kumar" class="nav-profile-pic" />
         <span class="nav-name">Prashant<span class="dot">.</span></span>
@@ -48,7 +44,6 @@
 
       <div class="nav-right">
         <a href="#contact" class="nav-cta">Hire Me</a>
-        <!-- Hamburger (#4) -->
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span>
           <span></span>
@@ -58,7 +53,6 @@
 
     </div>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu">
       <ul>
         <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
@@ -70,15 +64,12 @@
     </div>
   </nav>
 
-  <!-- PAGE CONTENT -->
   <main>
     {% block content %}{% endblock %}
   </main>
 
-  <!-- BACK TO TOP (#7) -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <span>© <span id="footer-year"></span> {{ portfolio.name }}</span>
