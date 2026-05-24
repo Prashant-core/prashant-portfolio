@@ -1,3 +1,13 @@
+// ── HERO VIDEO FADE IN ──
+const heroVideo = document.getElementById("hero-video");
+if (heroVideo) {
+  heroVideo.addEventListener("canplay", () => {
+    heroVideo.classList.add("loaded");
+  });
+  // fallback if already ready
+  if (heroVideo.readyState >= 3) heroVideo.classList.add("loaded");
+}
+
 // ── SCROLL PROGRESS BAR ──
 const scrollProgress = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
