@@ -14,7 +14,6 @@
         <h2 class="section-title">Turning Data Into <span class="gradient-text">Intelligence</span></h2>
         <p class="about-text">{{ portfolio.about }}</p>
 
-        <!-- Stats (#6) -->
         <div class="about-stats" id="about-stats">
           <div class="stat-item">
             <div class="stat-num" data-count="2">0<span>+</span></div>
@@ -23,6 +22,10 @@
           <div class="stat-item">
             <div class="stat-num" data-count="92">0<span>%</span></div>
             <div class="stat-label">Model Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" id="age-counter">—</div>
+            <div class="stat-label">Years on Earth</div>
           </div>
         </div>
 
@@ -39,6 +42,99 @@
           <a href="/static/resume.pdf" target="_blank" class="link-pill link-pill-resume">Download Resume ↓</a>
         </div>
       </div>
+    </div>
+
+    <!-- BENTO GRID -->
+    <div class="bento-grid">
+
+      <!-- Tech Stack -->
+      <div class="bento-card bento-wide glass-card">
+        <div class="bento-label">⚡ Tech Stack</div>
+        <div class="bento-tech-icons">
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+            <span>Python</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"/>
+            <span>TensorFlow</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/>
+            <span>MongoDB</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"/>
+            <span>Flask</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/>
+            <span>MySQL</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
+            <span>Git</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-icon-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/>
+            <span>NumPy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location Map -->
+      <div class="bento-card bento-map-card glass-card">
+        <div class="bento-label">📍 Location</div>
+        <div id="bento-map" style="width:100%;height:200px;border-radius:12px;overflow:hidden;margin-bottom:10px;"></div>
+        <div class="bento-map-tag">Noida, India · 28.54°N, 77.39°E</div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="bento-card bento-small glass-card bento-theme-card" id="themeCard">
+        <div class="bento-label">Theme</div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon" id="themeIcon">🌙</span>
+        </button>
+        <div class="theme-label" id="themeLabel">Dark Mode</div>
+      </div>
+
+      <!-- Building Now -->
+      <div class="bento-card bento-small glass-card">
+        <div class="bento-label">🔥 Building Now</div>
+        <div class="bento-building-text">RAG-based document Q&A with LangChain + Pinecone</div>
+        <div class="bento-building-status">
+          <span class="status-dot-green"></span> In Progress
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="bento-card bento-medium glass-card">
+        <div class="bento-label">🎓 Education</div>
+        <div class="bento-edu-list">
+          <div class="bento-edu-item">
+            <div class="bento-edu-title">B.Tech CSE (AI & ML)</div>
+            <div class="bento-edu-uni">Noida International University</div>
+            <div class="bento-edu-year">Aug 2023 — May 2027 · CGPA: <span>8.00</span></div>
+          </div>
+          <div class="bento-edu-divider"></div>
+          <div class="bento-edu-item">
+            <div class="bento-edu-title">Class 12 — Science (PCM)</div>
+            <div class="bento-edu-uni">PTSJM Saraswati Vidya Mandir, Rajgir, Nalanda</div>
+            <div class="bento-edu-year">April 2021 – April 2023 · <span>70%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="bento-card bento-medium glass-card bento-quote">
+        <div class="bento-label">💬 Philosophy</div>
+        <div class="bento-quote-text">"I build AI that actually works — not just in notebooks, but in the real world."</div>
+      </div>
+
     </div>
   </div>
 </section>

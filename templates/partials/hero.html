@@ -1,12 +1,12 @@
 <section class="hero" id="home">
 
-  <!-- HLS Video Background -->
+  <!-- Galaxy Video Background -->
   <div class="hero-video-wrap">
     <video id="hero-video" class="hero-video" autoplay muted loop playsinline></video>
     <div class="hero-video-overlay"></div>
   </div>
 
-  <!-- Keep canvas for particles on top of video -->
+  <!-- Subtle particles on top -->
   <canvas id="hero-canvas"></canvas>
 
   <div class="hero-content">
@@ -14,40 +14,44 @@
       <span class="badge-dot"></span>
       Open to AI & ML Opportunities
     </div>
+
     <h1 class="hero-title">
-      Hi, I'm <span class="gradient-text">Prashant Kumar</span>
+      Hi, I'm<br/>
+      <span class="gradient-text hero-name">Prashant Kumar</span>
     </h1>
+
     <h2 class="hero-sub">
       <span id="typing-text"></span><span class="typing-cursor">|</span>
     </h2>
-    <p class="hero-desc">Final year B.Tech student at Noida International University · Building AI that solves real problems.</p>
+
+    <p class="hero-desc">
+      Final year B.Tech (AI & ML) · Noida International University<br/>
+      Building AI that actually works — not just in notebooks.
+    </p>
+
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="/static/resume.pdf" target="_blank" class="btn-secondary">View Resume ↗</a>
       <a href="#contact" class="btn-outline">Let's Talk</a>
     </div>
+
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       <span>scroll</span>
     </div>
   </div>
 
-  <!-- HLS.js script -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     (function() {
       const video = document.getElementById('hero-video');
       const src = 'https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8';
-
       if (Hls.isSupported()) {
         const hls = new Hls({ autoStartLoad: true, startLevel: -1 });
         hls.loadSource(src);
         hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function() {
-          video.play().catch(() => {});
-        });
+        hls.on(Hls.Events.MANIFEST_PARSED, function() { video.play().catch(() => {}); });
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Safari native HLS
         video.src = src;
         video.play().catch(() => {});
       }

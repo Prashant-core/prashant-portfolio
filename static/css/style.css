@@ -760,3 +760,357 @@ body {
 
 /* Hero content sits above everything */
 .hero-content { z-index: 3; }
+
+/* ── LIGHT MODE VARIABLES ── */
+body.light-mode {
+  --bg: #f0f0f5;
+  --bg2: #e8e8f0;
+  --bg3: #dcdce8;
+  --text: #0a0a0f;
+  --muted: #555;
+  --border: rgba(0,0,0,0.1);
+}
+body.light-mode .nav-name,
+body.light-mode .nav-links a,
+body.light-mode .hero-title { color: #0a0a0f; }
+body.light-mode .nav-links a { color: rgba(0,0,0,0.6); }
+body.light-mode .glass-card { background: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.8); }
+
+/* ── THEME CIRCLE OVERLAY ── */
+.theme-circle-overlay {
+  position: fixed; z-index: 9998;
+  border-radius: 50%;
+  width: 0; height: 0;
+  background: #f0f0f5;
+  transform: translate(-50%, -50%);
+  transition: none;
+  pointer-events: none;
+}
+.theme-circle-overlay.expanding {
+  transition: width 0.7s ease, height 0.7s ease;
+}
+.theme-circle-overlay.dark-expand { background: #0a0a0f; }
+
+/* ── GLASS CARD ── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.glass-card:hover {
+  border-color: rgba(124,58,237,0.35);
+  transform: translateY(-3px);
+}
+
+/* ── BENTO GRID ── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+  margin-top: 60px;
+}
+.bento-card {
+  border-radius: 20px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+.bento-label {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--purple); margin-bottom: 14px; font-weight: 500;
+}
+
+/* Grid placement */
+.bento-wide  { grid-column: span 2; }
+.bento-map   { grid-column: span 2; grid-row: span 2; min-height: 280px; }
+.bento-small { grid-column: span 1; }
+.bento-medium{ grid-column: span 2; }
+
+/* ── TECH ICONS ── */
+.bento-tech-icons {
+  display: flex; flex-wrap: wrap; gap: 16px;
+}
+.tech-icon-item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--muted);
+  transition: transform 0.2s;
+}
+.tech-icon-item:hover { transform: translateY(-3px); }
+.tech-icon-item img {
+  width: 36px; height: 36px; object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(124,58,237,0.3));
+}
+
+/* ── MAP ── */
+.bento-map-inner {
+  width: 100%; height: 180px;
+  border-radius: 12px; overflow: hidden;
+  margin-bottom: 10px;
+}
+.bento-map-tag {
+  font-size: 11px; color: var(--muted);
+  display: flex; align-items: center; gap: 6px;
+}
+/* Override leaflet tiles to dark */
+.leaflet-tile { filter: invert(1) hue-rotate(180deg) brightness(0.85) saturate(0.7); }
+body.light-mode .leaflet-tile { filter: none; }
+
+/* ── THEME TOGGLE ── */
+.bento-theme-card {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  text-align: center;
+}
+.theme-toggle {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--bg3);
+  border: 2px solid rgba(124,58,237,0.4);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s; font-size: 24px;
+}
+.theme-toggle:hover {
+  border-color: var(--purple);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(124,58,237,0.3);
+}
+.theme-label { font-size: 12px; color: var(--muted); }
+
+/* ── BUILDING NOW ── */
+.bento-building-text {
+  font-size: 13px; color: #ddd; line-height: 1.6; margin-bottom: 12px;
+}
+.bento-building-status {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; color: #4ade80;
+}
+.status-dot-green {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 1.5s infinite;
+}
+
+/* ── EDUCATION CARD ── */
+.bento-edu-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;
+}
+.bento-edu-uni { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.bento-edu-year { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.bento-edu-cgpa { font-size: 13px; color: #ccc; }
+.bento-edu-cgpa span { color: var(--purple); font-weight: 600; }
+
+/* ── QUOTE CARD ── */
+.bento-quote-text {
+  font-size: 14px; color: #bbb; line-height: 1.8;
+  font-style: italic;
+}
+.bento-quote::before {
+  content: '"';
+  position: absolute; top: 10px; right: 20px;
+  font-size: 80px; color: rgba(124,58,237,0.15);
+  font-family: Georgia, serif; line-height: 1;
+}
+
+/* ── AGE COUNTER ── */
+#age-counter {
+  font-size: 22px !important;
+  letter-spacing: -0.5px;
+}
+
+/* ── RESPONSIVE BENTO ── */
+@media (max-width: 900px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-map { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-wide, .bento-map, .bento-medium, .bento-small { grid-column: span 1; }
+}
+
+/* ── HERO FIX ── */
+.hero-name {
+  display: block;
+  font-size: clamp(44px, 8vw, 88px);
+  line-height: 1.05;
+  margin-top: 8px;
+}
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700; line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* ── PROJECT CARD FIX — always visible ── */
+.project-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.project-card.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ── BENTO MAP CARD ── */
+.bento-map-card {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 300px;
+}
+
+/* ── EDUCATION LIST ── */
+.bento-edu-list { display: flex; flex-direction: column; gap: 0; }
+.bento-edu-item { padding: 10px 0; }
+.bento-edu-divider {
+  height: 1px; background: var(--border); margin: 2px 0;
+}
+.bento-edu-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 2px;
+}
+.bento-edu-uni { font-size: 12px; color: var(--muted); }
+.bento-edu-year { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.bento-edu-year span { color: var(--purple); font-weight: 600; }
+
+/* ── GITHUB BENTO ── */
+.gh-bento-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+.gh-profile-card {
+  border-radius: 16px; padding: 24px;
+  text-decoration: none; color: inherit;
+  display: block;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.gh-profile-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-3px); }
+.gh-profile-top {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 20px;
+}
+.gh-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(124,58,237,0.4);
+}
+.gh-profile-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 600; color: #fff;
+}
+.gh-profile-handle { font-size: 13px; color: var(--muted); }
+.gh-visit-badge {
+  margin-left: auto;
+  font-size: 11px; color: #a78bfa;
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 4px 12px; border-radius: 20px;
+  white-space: nowrap;
+}
+.gh-stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; opacity: 0;
+  transition: opacity 0.4s;
+}
+.gh-stats-row.loaded { opacity: 1; }
+.gh-stat-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 8px;
+  text-align: center;
+}
+.gh-stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px; font-weight: 700; color: #fff;
+}
+.gh-stat-lbl { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.gh-loading-row {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--muted); font-size: 13px; padding: 8px 0;
+}
+.gh-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(124,58,237,0.2);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite; flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Lang card */
+.gh-lang-card {
+  border-radius: 16px; padding: 24px;
+}
+.gh-card-title {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 600; color: #ddd;
+  margin-bottom: 18px;
+}
+.gh-card-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.gh-lang-bar {
+  display: flex; height: 8px; border-radius: 4px;
+  overflow: hidden; gap: 2px; margin-bottom: 14px;
+}
+.gh-lang-bar-seg { height: 100%; border-radius: 2px; }
+.gh-lang-labels { display: flex; flex-direction: column; gap: 8px; }
+.gh-lang-label {
+  display: flex; align-items: center; gap: 8px; font-size: 13px;
+}
+.gh-lang-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.gh-lang-name { color: #ddd; flex: 1; }
+.gh-lang-pct { color: var(--muted); font-size: 12px; }
+
+/* Contribution card */
+.gh-contrib-card {
+  grid-column: 1 / -1;
+  border-radius: 16px; padding: 24px;
+}
+.gh-contrib-link {
+  margin-left: auto; font-size: 12px; color: var(--purple);
+  text-decoration: none;
+}
+.gh-contrib-link:hover { text-decoration: underline; }
+.gh-contrib-canvas {
+  width: 100%; height: 120px; display: block;
+}
+.gh-contrib-loading {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--muted); font-size: 13px;
+}
+
+/* ── CONTACT CARDS ── */
+.contact-cards { display: flex; flex-direction: column; gap: 12px; }
+.contact-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; border-radius: 14px;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.contact-card:hover { border-color: rgba(124,58,237,0.4); transform: translateX(4px); }
+.contact-card-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  border: 1px solid;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-card-label { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+.contact-card-value { font-size: 14px; color: #ddd; font-weight: 500; }
+.contact-card-arrow { margin-left: auto; color: var(--muted); font-size: 16px; }
+
+/* ── RESPONSIVE GITHUB ── */
+@media (max-width: 768px) {
+  .gh-bento-grid { grid-template-columns: 1fr; }
+  .gh-contrib-card { grid-column: 1; }
+  .gh-stats-row { grid-template-columns: repeat(2, 1fr); }
+}
