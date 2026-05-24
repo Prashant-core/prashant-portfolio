@@ -1245,3 +1245,203 @@ body.light-mode .hero-humanized .hero-desc {
 body.light-mode .typing-cursor {
   color: #0f172a !important;
 }
+/* ========================================================
+   ── REDESIGN: ULTRA-MINIMAL & CLEAN TYPOGRAPHY ── 
+   ======================================================== */
+
+/* 1. Universal Clean Typography for all Headings */
+.nav-name, 
+.hero-title, 
+.section-title, 
+.project-title, 
+.bento-edu-title, 
+.gh-profile-name, 
+.stat-num, 
+.about-initials,
+.skill-cat-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px !important; /* Tight, modern spacing */
+  color: #ffffff !important; 
+}
+
+/* 2. Strip away the colored accents & italics */
+.hero-name, 
+.gradient-text {
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+  font-style: normal !important; /* Removes italics */
+  font-weight: 600 !important;
+}
+
+/* 3. Add a tiny, subtle accent color just to the period (Prashant.) */
+.nav-name .dot, 
+.hero-title span::after {
+  color: var(--purple) !important; /* Uses your soft teal */
+}
+
+/* 4. Minimalist footer signature */
+.digital-signature {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  font-size: 13px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase; /* Makes it look incredibly clean */
+}
+
+/* ========================================================
+   ── LIGHT MODE OVERRIDES FOR MINIMALISM ── 
+   ======================================================== */
+
+body.light-mode .nav-name, 
+body.light-mode .hero-title, 
+body.light-mode .section-title, 
+body.light-mode .project-title, 
+body.light-mode .bento-edu-title, 
+body.light-mode .gh-profile-name, 
+body.light-mode .stat-num, 
+body.light-mode .about-initials,
+body.light-mode .skill-cat-title,
+body.light-mode .hero-name, 
+body.light-mode .gradient-text {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+/* ========================================================
+   ── OVERRIDE: STRIP ALL REMAINING BUTTON GRADIENTS ── 
+   ======================================================== */
+
+/* 1. Remove gradients from all primary buttons and use a solid minimal color */
+.nav-cta,
+.btn-primary,
+.proj-live,
+.mobile-cta {
+  background: var(--purple) !important; /* Solid soft teal */
+  color: #0a0a0f !important; /* Dark text for high contrast */
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: none !important;
+  letter-spacing: -0.3px;
+}
+
+/* Minimal hover effect */
+.nav-cta:hover,
+.btn-primary:hover,
+.proj-live:hover,
+.mobile-cta:hover {
+  background: #ffffff !important;
+  color: #0a0a0f !important;
+  transform: translateY(-2px);
+}
+
+/* 2. Fix the scroll progress bar at the very top of the page */
+.scroll-progress {
+  background: var(--purple) !important;
+}
+
+/* ========================================================
+   ── LIGHT MODE BUTTON OVERRIDES ── 
+   ======================================================== */
+
+body.light-mode .nav-cta,
+body.light-mode .btn-primary,
+body.light-mode .proj-live,
+body.light-mode .mobile-cta {
+  background: #0f172a !important; /* Deep slate */
+  color: #ffffff !important;
+}
+
+body.light-mode .nav-cta:hover,
+body.light-mode .btn-primary:hover,
+body.light-mode .proj-live:hover,
+body.light-mode .mobile-cta:hover {
+  background: var(--purple) !important;
+  color: #ffffff !important;
+}
+
+body.light-mode .scroll-progress {
+  background: #0f172a !important;
+}
+/* ========================================================
+   ── OVERRIDE: COMPACT SKILLS SECTION ── 
+   ======================================================== */
+
+.compact-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px 24px;
+  margin-top: 48px;
+}
+
+.compact-skill-group h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.compact-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.compact-pills span {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.compact-pills span:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+}
+
+/* Light Mode Overrides */
+body.light-mode .compact-pills span {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+body.light-mode .compact-pills span:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+body.light-mode .compact-skill-group h4 {
+  color: #94a3b8;
+}
+
+/* ========================================================
+   ── OVERRIDE: FOOTER ICONS ── 
+   ======================================================== */
+
+.footer-icon {
+  color: #64748b;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body.light-mode .footer-icon:hover {
+  color: #0f172a;
+}
