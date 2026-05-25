@@ -9,10 +9,10 @@ This repository contains the source code for my professional portfolio website. 
 The portfolio features a custom dual-video theme engine that smoothly transitions between a dark, space-oriented aesthetic and a clean, light geometric aesthetic.
 
 ### Dark Mode
-![Dark Mode Theme](./Screenshot%202026-05-25%20154936.jpg)
+![Dark Mode Theme](./dark-mode.png)
 
 ### Light Mode
-![Light Mode Theme](./image_fdb1bc.jpg)
+![Light Mode Theme](./light-mode.png)
 
 ## Key Features
 
