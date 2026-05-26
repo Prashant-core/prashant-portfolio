@@ -29,38 +29,37 @@ The portfolio features a custom dual-video theme engine that smoothly transition
 * **Animations:** Canvas API (Custom particle interactions), Intersection Observer API (Scroll reveals)
 * **Deployment:** Vercel
 
-## Local Development Setup
+## Project Structure
 
-To run this portfolio locally, follow these steps:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Prashant-core/portfolio.git
-    cd portfolio
-    ```
-
-2.  **Create and activate a virtual environment (Optional but recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use: venv\Scripts\activate
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    pip install fastapi uvicorn
-    ```
-
-4.  **Run the application:**
-    ```bash
-    uvicorn main:app --reload
-    ```
-
-5.  **View the site:**
-    Open your browser and navigate to `http://127.0.0.1:8000`.
-
-## Contact
-
-For professional inquiries, collaboration opportunities, or to view my full resume, please reach out via the contact form on the live site or directly through my [LinkedIn profile](https://www.linkedin.com/in/prashant-kumar-49775029a/).
-
----
-*Designed and built by Prashant Kumar.*
+```text
+PRASHANT-PORTFOLIO/
+├── data/
+│   ├── __pycache__/
+│   └── portfolio_data.py
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   │   └── profile.jpg
+│   ├── js/
+│   │   └── animation.js
+│   └── resume.pdf
+├── templates/
+│   ├── partials/
+│   │   ├── about.html
+│   │   ├── contact.html
+│   │   ├── github.html
+│   │   ├── hero.html
+│   │   ├── projects.html
+│   │   └── skills.html
+│   ├── base.html
+│   └── index.html
+├── venv/
+├── .env
+├── .gitignore
+├── dark-mode.png
+├── light-mode.png
+├── main.py
+├── README.md
+├── requirements.txt
+└── vercel.json
