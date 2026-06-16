@@ -1,0 +1,48 @@
+<section class="section experience-section" id="experience">
+  <div class="container">
+    <div class="section-tag">Journey</div>
+    <h2 class="section-title">Experience & <span class="gradient-text">Certifications</span></h2>
+    
+    <div class="timeline-grid">
+      <!-- Experience Column -->
+      <div class="timeline-col">
+        <h3 class="timeline-col-title">Experience</h3>
+        <div class="timeline-wrapper">
+          {% for item in portfolio.experience %}
+          <div class="timeline-item glass-card">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">{{ item.date }}</div>
+            <h4 class="timeline-role">{{ item.role }}</h4>
+            <p class="timeline-desc">{{ item.desc }}</p>
+            {% if item.desc2 %}
+            <p class="timeline-desc">{{ item.desc2 }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Certifications Column -->
+      <div class="timeline-col">
+        <h3 class="timeline-col-title">Certifications</h3>
+        <div class="timeline-wrapper">
+          {% for cert in portfolio.certifications %}
+          <div class="timeline-item glass-card">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">{{ cert.date }}</div>
+            <h4 class="timeline-role">{{ cert.name }}</h4>
+            <div class="timeline-org">{{ cert.org }}</div>
+            <p class="timeline-desc">{{ cert.desc }}</p>
+            {% if cert.desc2 %}
+            <p class="timeline-desc">{{ cert.desc2 }}</p>
+            {% endif %}
+            {% if cert.link and cert.link != '#' %}
+            <a href="{{ cert.link }}" target="_blank" class="timeline-link">View Certificate ↗</a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

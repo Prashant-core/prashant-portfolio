@@ -50,17 +50,40 @@ portfolio = {
             "color": "#f59e0b"
         }
     ],
+    
     "certifications": [
+        {
+            "name": "Artificial Intelligence Fundamentals",
+            "org": "Cisco Networking Academy & IBM SkillsBuild",
+            "date": "Jun 2026",
+            "desc": "Mastered foundational concepts in NLP, Computer Vision, Machine Learning, Deep Learning, and Neural Networks.",
+            "desc2": "Configured machine learning projects in IBM Watson Studio and applied AI Ethics frameworks.",
+            "link": "/static/ibm_cert.pdf"
+        },
+        {
+            "name": "Generative AI Leader Track",
+            "org": "Google Cloud Career Launchpad",
+            "date": "Mar 2026",
+            "desc": "Earned the Prompt Design in Vertex AI Skill Badge.",
+            "desc2": "Gained hands-on experience with Generative AI, prompt engineering, and Vertex AI Studio.",
+            "link": "/static/google_cert.pdf"
+        },
         {
             "name": "Artificial Intelligence Certification",
             "org": "YHills",
-            "desc": "Comprehensive training covering AI concepts, ML fundamentals, and real-world applications."
+            "date": "May 2025",
+            "desc": "Comprehensive training covering AI concepts, ML fundamentals, and real-world applications.",
+            "desc2": "",
+            "link": "/static/yhills_cert.pdf"
         }
     ],
+    
     "experience": [
         {
-            "role": "Data Analytics & Machine Learning Intern",
-            "desc": "Applied ML concepts to real datasets, built analytical pipelines, and collaborated on technical solutions."
+            "role": "Academic / Project-Based Experience",
+            "date": "2023 - Present",
+            "desc": "Developed multiple ML and data analysis projects as part of coursework.",
+            "desc2": "Applied theoretical concepts to real-world datasets and collaborated with peers on technical solutions."
         }
     ]
 }
