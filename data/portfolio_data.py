@@ -54,11 +54,21 @@ portfolio = {
     "certifications": [
         {
             "name": "Artificial Intelligence Fundamentals",
-            "org": "Cisco Networking Academy & IBM SkillsBuild",
+            "org": "IBM SkillsBuild",
             "date": "Jun 2026",
             "desc": "Mastered foundational concepts in NLP, Computer Vision, Machine Learning, Deep Learning, and Neural Networks.",
             "desc2": "Configured machine learning projects in IBM Watson Studio and applied AI Ethics frameworks.",
-            "link": "/static/ibm_cert.pdf"
+            "link": "/static/ibm_cert.pdf",
+            "badge_link": "https://www.credly.com/badges/d43065c1-76fe-496a-a265-4b346ae88277/public_url"
+        },
+        {
+            "name": "AI Fundamentals with IBM SkillsBuild",
+            "org": "Cisco Networking Academy",
+            "date": "Jun 2026",
+            "desc": "Recognized for commitment to achieve professional excellence in Artificial Intelligence fundamentals.",
+            "desc2": "",
+            "link": "/static/cisco_cert.pdf",
+            "badge_link": "https://www.credly.com/badges/7a0b916c-7db1-4014-9d00-c28344ff208b/public_url"
         },
         {
             "name": "Generative AI Leader Track",
@@ -66,12 +76,13 @@ portfolio = {
             "date": "Mar 2026",
             "desc": "Earned the Prompt Design in Vertex AI Skill Badge.",
             "desc2": "Gained hands-on experience with Generative AI, prompt engineering, and Vertex AI Studio.",
-            "link": "/static/google_cert.pdf"
+            "link": "/static/google_cert.pdf",
+            "badge_link": "https://www.credly.com/badges/42152b69-a5e2-4800-bfa3-43cf384897ae/public_url"
         },
         {
             "name": "Artificial Intelligence Certification",
             "org": "YHills",
-            "date": "May 2025",
+            "date": "2025",
             "desc": "Comprehensive training covering AI concepts, ML fundamentals, and real-world applications.",
             "desc2": "",
             "link": "/static/yhills_cert.pdf"

@@ -4,7 +4,6 @@
     <h2 class="section-title">Experience & <span class="gradient-text">Certifications</span></h2>
     
     <div class="timeline-grid">
-      <!-- Experience Column -->
       <div class="timeline-col">
         <h3 class="timeline-col-title">Experience</h3>
         <div class="timeline-wrapper">
@@ -22,7 +21,6 @@
         </div>
       </div>
 
-      <!-- Certifications Column -->
       <div class="timeline-col">
         <h3 class="timeline-col-title">Certifications</h3>
         <div class="timeline-wrapper">
@@ -36,9 +34,17 @@
             {% if cert.desc2 %}
             <p class="timeline-desc">{{ cert.desc2 }}</p>
             {% endif %}
-            {% if cert.link and cert.link != '#' %}
-            <a href="{{ cert.link }}" target="_blank" class="timeline-link">View Certificate ↗</a>
-            {% endif %}
+            
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
+              {% if cert.link and cert.link != '#' %}
+              <a href="{{ cert.link }}" target="_blank" class="timeline-link" style="margin-top: 0;">View Certificate ↗</a>
+              {% endif %}
+              
+              {% if cert.badge_link %}
+              <a href="{{ cert.badge_link }}" target="_blank" class="timeline-link" style="margin-top: 0; color: #4ade80;">Verify Badge 🛡️</a>
+              {% endif %}
+            </div>
+
           </div>
           {% endfor %}
         </div>
