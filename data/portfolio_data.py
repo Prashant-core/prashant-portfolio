@@ -53,6 +53,30 @@ portfolio = {
     
     "certifications": [
         {
+            "name": "Apply AI: Analyze Customer Reviews",
+            "org": "Cisco Networking Academy",
+            "date": "Jun 2026",
+            "desc": "Processed tabular data using LLMs and wrote complex spreadsheet formulas with AI assistance.",
+            "desc2": "Applied human-in-the-loop decision making and formatted data for chatbot integrations.",
+            "link": "/static/cisco_apply_ai_cert.pdf"
+        },
+        {
+            "name": "Data Analytics Essentials",
+            "org": "Cisco Networking Academy",
+            "date": "Jun 2026",
+            "desc": "Analyzed data using statistical techniques and transformed datasets using standard analytics tools.",
+            "desc2": "Completed hands-on labs utilizing Excel, SQL, and Tableau to extract value from data.",
+            "link": "/static/cisco_data_analytics_cert.pdf"
+        },
+        {
+            "name": "Introduction to Modern AI",
+            "org": "Cisco Networking Academy & Noida International University",
+            "date": "Jun 2026",
+            "desc": "Mastered foundational modern artificial intelligence concepts.",
+            "desc2": "",
+            "link": "/static/cisco_modern_ai_cert.pdf"
+        },
+        {
             "name": "Artificial Intelligence Fundamentals",
             "org": "IBM SkillsBuild",
             "date": "Jun 2026",
