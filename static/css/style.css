@@ -9,7 +9,7 @@
   
   /* The Warmer, Humanized Palette */
   --purple: #14b8a6; /* Soft Teal (Replaces harsh purple) */
-  --pink: #f59e0b;   /* Warm Amber/Gold */
+  --pink: #efedea;   /* Warm Amber/Gold */
   --orange: #f43f5e; /* Soft Rose */
   --grad: linear-gradient(135deg, var(--purple), var(--pink), var(--orange));
 }
