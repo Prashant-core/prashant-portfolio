@@ -1265,7 +1265,7 @@ body.light-mode .typing-cursor {
   color: #ffffff !important; 
 }
 
-/* 2. Strip away the colored accents & italics */
+/* 2. Strip away the colored accents & italics *
 .hero-name, 
 .gradient-text {
   background: none !important;
